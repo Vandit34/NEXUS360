@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ------------------External Links------------------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: "Roboto Mono", monospace; -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Content/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Content/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Content/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../Content/site.webmanifest" />
+    <!-- -------------------------------------- -->
+    <title>Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Raleway", sans-serif;
+      }
+
+      body {
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #0e0e2a;
+      }
+      #navbar_id {
+        margin-bottom: 120px;
+      }
+      #navbar {
+        display: flex;
+        align-items: center;
+      }
+      nav {
+        width: 100vw;
+      }
+      nav h1 {
+        display: absolute;
+        position: absolute;
+        left: 137px;
+        font-size: 30px;
+        color: #099ee0;
+        font-family: "Finger Paint", cursive;
+      }
+      nav img {
+        border-radius: 152px;
+        position: relative;
+        left: 39px;
+        box-shadow: 1px -5px 300px 36px rgba(0, 0, 0, 0.75);
+        height: 93px;
+      }
+      #img_id_1 {
+        position: absolute;
+        left: 57px;
+        top: 425px;
+      }
+      #img_id_1 img {
+        height: 269px;
+      }
+      #img_id_2 {
+        position: absolute;
+        top: 338px;
+        right: 29px;
+      }
+      #img_id_2 img {
+        height: 289px;
+      }
+
+      form {
+        height: 80%;
+        width: 41%;
+        border: solid aqua;
+        background-color: #0e0e2a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        -webkit-box-shadow: 2px -4px 138px 17px #5a8484;
+        -moz-box-shadow: 2px -4px 138px 17px #5a8484;
+        box-shadow: 2px -4px 138px 17px #5a8484;
+      }
+
+      form h1,
+      a,
+      i,
+      input,
+      label {
+        color: aqua;
+      }
+      form span {
+        color: crimson;
+      }
+      .fa-solid {
+        margin: 17px;
+        position: absolute;
+      }
+      input {
+        border: none;
+        width: 280px;
+        height: 52px;
+        padding-left: 61px;
+        font-size: 20px;
+        background-color: transparent;
+      }
+      /* .input :hover {
+        border: none;
+      } */
+
+      input:focus {
+        /* border: none; */
+        outline: none;
+      }
+      .data {
+        width: 56%;
+        margin: 24px;
+      }
+      .data:hover {
+        border-bottom: 2px solid aqua;
+      }
+      #checkbox_id {
+        display: flex;
+        align-items: center;
+        width: 82%;
+        justify-content: space-evenly;
+      }
+      #checkbox_inner_id {
+        display: flex;
+        align-items: center;
+      }
+      #rem_me {
+        width: 15px;
+        margin-right: 10px;
+      }
+      #login_id {
+        padding: 9px;
+
+        padding-left: 22%;
+        padding-right: 25%;
+        margin-bottom: 10%;
+        font-size: 22px;
+      }
+      #login_id a {
+        color: black;
+        text-decoration: none;
+      }
+      footer {
+        background-color: black;
+        color: aqua;
+        text-align: center;
+        width: 100vw;
+        margin-top: 40px;
+        font-family: "Finger Paint", cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar_id">
+      <nav>
+        <div id="navbar">
+          <img src="../Content/Nexus360_logo.jpg" alt="" />
+          <h1>Nexus360</h1>
+        </div>
+      </nav>
+    </div>
+    <div class="image_svg" id="img_id_1">
+      <img src="../Content/Nexus_Login_SVG_1_2.svg" alt="" />
+    </div>
+    <form action="#">
+      <h1>Login</h1>
+      <!-- <i class="fa-solid fa-user"></i>: <input type="text" /> -->
+      <div class="data">
+        <i class="fa-solid fa-user"></i>
+
+        <input for="Name" type="text" placeholder="Enter your Name" />
+      </div>
+      <br /><br />
+      <div class="data">
+        <i class="fa-solid fa-mobile-button"></i>
+
+        <input
+          for="Contact_No"
+          type="password"
+          placeholder="Enter your Password"
+        />
+      </div>
+      <br /><br />
+      <div class="data">
+        <i class="fa-solid fa-envelope"></i>
+
+        <input type="text" placeholder="Enter your email id" />
+      </div>
+      <br />
+      <br />
+      <div id="checkbox_id">
+        <div id="checkbox_inner_id">
+          <input type="checkbox" id="rem_me" /><label for="rem_me"
+            >Remember me</label
+          >
+        </div>
+        <a href="#">Forget Password ?</a>
+      </div>
+      <br /><br />
+      <button id="login_id">
+        <a href="./Landing_page.html">👉Click Here👈</a>
+      </button>
+      <div>
+        <span>Not a member?</span>
+        <a href="./Sign_Up.html" target="_blank">Signup now</a>
+      </div>
+    </form>
+    <div class="image_svg" id="img_id_2">
+      <img src="../Content/Nexus_Login_SVG_2_2.svg" alt="" />
+    </div>
+    <script
+      src="https://kit.fontawesome.com/64d805c103.js"
+      crossorigin="anonymous"
+    ></script>
+    <footer>NEXUS360 &copy; &nbsp;2023</footer>
+  </body>
+</html>

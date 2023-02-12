@@ -1,0 +1,230 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+      background-color: #0e0e2a;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+}
+
+      #navbar {
+        display: flex;
+        align-items: center;
+      }
+            nav {
+        width: 100vw;
+      }
+      nav h1 {
+        display: absolute;
+        position: absolute;
+        left: 137px;
+        font-size: 30px;
+        color: #099ee0;
+        font-family: "Finger Paint", cursive;
+      }
+      nav img {
+        border-radius: 152px;
+        position: relative;
+        left: 39px;
+        box-shadow: 1px -5px 300px 36px rgba(0, 0, 0, 0.75);
+        height: 93px;
+      }
+      #Options
+      {
+        position: absolute;
+    right: 63px;
+      }
+      #Options ul
+      {
+   list-style: none;  
+   display: flex;
+   justify-content: space-around;
+width: 36vw;
+}
+      #Options li
+      {
+height: 45px;
+width: 145px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+      #Options ul
+      {
+   list-style: none;  
+   display: flex;
+   justify-content: space-between;
+width: 36vw;
+}
+#Options li
+{
+    margin-right: 20px;
+}
+#Options a
+{
+    text-decoration: none;
+    font-family: "Roboto Mono", monospace;    
+   color: #099ee0;
+      }
+#Options li:hover
+{
+   background-color: aqua; 
+   border-radius:10px ;   
+}
+#Options li:hover a
+{
+color: black;      
+}
+   /*-------------------------------------------  */
+  canvas
+  {
+    height: 600px;
+  }
+   /* ---------------------------------------- */
+   #Cities
+   {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template: auto auto auto;
+   }
+   #Cities_id_h1
+   {
+text-align: center;
+font-size: 70px;
+color: crimson;
+background-color: #099ee0;
+margin-bottom: 71px;
+  font-family: "Roboto Mono", monospace;    
+   }
+ 
+    .City
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px;
+        box-shadow: 1px -1px 300px 10px #099ee0;
+        margin: 38px;
+        border-radius: 76px;
+        color: #099ee0;
+    }
+    
+    .City h1
+    {
+        font-family: "Roboto Mono", monospace;    
+    }
+   .City p
+   {
+  font-family: "Raleway", sans-serif;
+  line-height:50px;
+}
+.City:hover
+{
+    box-shadow: 1px -1px 300px 10px #09e06a;
+    color:#09e06a ;
+}
+.City img
+  {
+       height: 80px;
+    }
+    #knowabout h1
+    {
+   text-align: center;
+font-size: 70px;
+color: crimson;
+background-color: #099ee0;
+margin-bottom: 71px;
+  font-family: "Roboto Mono", monospace;  
+
+    }
+    #knowabout p
+    {
+            
+       padding: 64px;
+box-shadow: 1px -1px 300px 10px #099ee0;
+border-radius: 76px;
+color: #099ee0;
+box-shadow: 1px -1px 300px 10px #099ee0;
+font-family: "Raleway", sans-serif;
+font-size: 26px;
+line-height: 64px;
+width: 800px;
+position: relative;
+left: 362px;
+     
+    }
+   #knowbout_id
+   {position: relative;
+top: 38px;} 
+   
+    #knowabout span
+    {
+        text-decoration: underline #09e06a;
+        color: #09e06a;
+    }
+    #knowabout_image_1    {
+position:absolute;
+    }
+    /* ----------Credits----------------- */
+    #Credits
+    {
+        position: relative;
+top: 31px;
+    }
+    #Credits h1
+    {
+           text-align: center;
+font-size: 70px;
+color: crimson;
+background-color: #099ee0;
+margin-bottom: 71px;
+  font-family: "Roboto Mono", monospace; 
+    }
+    #Cards
+    {
+        display: flex;
+        justify-content: space-around;
+        height: 368px;
+    }
+    .card
+    {
+        display: flex;
+        flex-direction: column;
+           box-shadow: 1px -1px 300px 10px #09e06a;
+           height: 315px;
+           justify-content: center;
+           align-items: center;
+    }
+    
+    .card img
+    {
+    height: 244px;
+    }
+
+    .card a 
+    {
+        text-decoration: none;
+        color: #09e06a;
+    font-size: 20px;
+      font-family: "Roboto Mono", monospace; 
+    }
+    .card span
+    {
+        color: #099ee0;
+    font-size: 20px;
+        font-family: "Finger Paint", cursive;
+    }
+    /* ----------------------------- */
+  footer {
+        background-color: black;
+        color: aqua;
+        text-align: center;
+        width: 100vw;
+        margin-top: 40px;
+        font-family: "Finger Paint", cursive;
+      }

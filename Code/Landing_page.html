@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ------------------External Links------------------- -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: "Roboto Mono", monospace; -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Content/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Content/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Content/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../Content/site.webmanifest" />
+    <link rel="stylesheet" href="./Landing_page.CSS" />
+    <link rel="stylesheet" href="./Scroll.JS" />
+    <!-- -------------------------------------- -->
+    <title>NEXUS360</title>
+  </head>
+  <body>
+    <div id="navbar_id">
+      <nav>
+        <div id="navbar">
+          <img src="../Content/Nexus360_logo.jpg" alt="" />
+          <h1>Nexus360</h1>
+          <div id="Options">
+            <ul>
+              <li><a href="#Cities_id">Destinations</a></li>
+              <li><a href="../dashboard.html">Your Meeting Points </a></li>
+              <li><a href="#knowabout_id">Who are we?</a></li>
+              <li><a href="#Credits_id">Creators</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- --------Animation------------------- -->
+    <canvas id="canvas"> </canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+      context.font = "Unleash the future";
+      // ctx.fillText("Welcome to Event Nexus", 10, 50);
+
+      canvas.width = window.innerWidth;
+      canvas.height = 400;
+      context.fillStyle = "black";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      class Particle {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.vx = Math.random() * 10 - 5;
+          this.vy = Math.random() * 10 - 5;
+          this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+          this.radius = Math.random() * 10 + 5;
+        }
+
+        draw() {
+          context.beginPath();
+          context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+          context.fillStyle = this.color;
+          context.fill();
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > canvas.width) {
+            this.vx *= -1;
+          }
+
+          if (this.y < 0 || this.y > canvas.height) {
+            this.vy *= -1;
+          }
+        }
+
+        interact(mouseX, mouseY) {
+          const dx = mouseX - this.x;
+          const dy = mouseY - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            this.radius = Math.random() * 20 + 10;
+          } else {
+            this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            this.radius = Math.random() * 10 + 5;
+          }
+        }
+      }
+
+      const particles = [];
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(canvas.width / 2, canvas.height / 2));
+      }
+
+      function animate() {
+        // Clear the canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update the particles and draw them
+        particles.forEach((particle) => {
+          particle.update();
+          particle.interact(mouseX, mouseY);
+          particle.draw();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      // Add event listeners for the mouse position
+      let mouseX = canvas.width / 2;
+      let mouseY = canvas.height / 2;
+      canvas.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+      });
+
+      animate();
+    </script>
+    <!-- ----------Cities----------------- -->
+    <div id="Cities_id">
+      <h1 id="Cities_id_h1">Explore your path</h1>
+      <div id="Cities">
+        <div class="City">
+          <img src="../Content/Nexus_Delhi.svg" alt="" />
+          <h1>Delhi</h1>
+          <p>
+            Designers work closely with technology developers to ensure that
+            products are not only functional but also visually appealing and
+            easy to use. In recent years, design thinking has become an
+            increasingly popular approach to technology development.Delhi will
+            be the right pick for all UI/UX enthusiasts
+          </p>
+        </div>
+        <div class="City">
+          <img src="../Content/Nexus_Kolkata.svg" alt="" />
+          <h1>Kolkata</h1>
+          <p>
+            Finance events in Kolkata bring together professionals, experts, and
+            enthusiasts from the finance industry to share knowledge, discuss
+            ideas, and showcase new products and services It is a great way to
+            learn about emerging trends and technologies in the finance industry
+            and to gain insights into the future of the sector.
+          </p>
+        </div>
+        <div class="City">
+          <img src="../Content/Nexus_Banglore.svg" alt="" />
+
+          <h1>Banglore</h1>
+          <p>
+            Tech requires a willingness to learn and adapt to new technologies
+            and programming languages as they emerge. In recent years, coding
+            has become increasingly important as the demand for skilled software
+            developers has grown. This has led to the rise of coding boot camps
+            in the Silicon Valley of India (Banglore)
+          </p>
+        </div>
+        <div class="City">
+          <img src="../Content/Nexus_Mumbai.svg" alt="" />
+          <h1>Mumbai</h1>
+          <p>
+            If you are interested in the personal finance or pursuing a career
+            in the finance industry Mumbai is the mine of knowledge for finance
+          </p>
+        </div>
+        <div class="City">
+          <img src="../Content/Nexus_Hyderabad.svg" alt="" />
+          <h1>Hyderabad</h1>
+          <p>
+            VR technology typically involves the use of a headset or other
+            immersive device that creates a visual and auditory experience that
+            simulates a real environment or situation. VR has applications in a
+            wide range of industries, including gaming, entertainment,
+            education, healthcare, and engineering. Hyderabad will be the right
+            destinations for VR developers at any stage of learning.
+          </p>
+        </div>
+        <div class="City">
+          <img src="../Content/Nexus_Pune.svg" alt="" />
+          <h1>Pune</h1>
+          <p>
+            Marketing events offer professionals the opportunity to learn about
+            the latest marketing trends, tools, and techniques, as well as
+            network with other marketing professionals. Some of the most popular
+            marketing events include industry conferences, workshops, and
+            webinars, as well as networking events and job fairs. Attending
+            marketing events in Pune will be an awesome experience
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="knowabout_id">
+      <div id="knowabout">
+        <h1>Who are we ?</h1>
+        <img
+          id="knowabout_image_1"
+          src="../Content/Nexus_whoarewe_image.png"
+          alt=""
+        />
+
+        <p>
+          " <span>Nexus360</span> is a platform dedicated to bridging the tech,
+          design, product development, cybersecurity, marketing, and finance
+          industries. Our mission is to provide a
+          <span>one-stop solution for discovering and attending</span> the best
+          events in these fields.
+          <span>Join us to stay ahead of the curve</span> and be a part of
+          shaping the future of these industries."
+        </p>
+      </div>
+    </div>
+    <div id="Credits_id">
+      <div id="Credits">
+        <h1>Creators</h1>
+        <div id="Cards">
+          <div class="card" id="card_1">
+            <img src="../Content/Nexus_Divyansh.jpeg" alt="" />
+            <span>Divyansh Tripathi</span>
+            <a
+              href="https://www.linkedin.com/in/divyansh-tripathi-61039b233/"
+              target="_blank"
+            >
+              Linkedin URL</a
+            >
+          </div>
+          <div class="card" id="card_2">
+            <img src="../Content/Google Profile Pic.jpeg" alt="" />
+            <span>Vandit Verma</span>
+            <a
+              href="https://www.linkedin.com/in/vandit-verma-221696226/"
+              target="_blank"
+              >Linkedin URL</a
+            >
+          </div>
+          <div class="card" id="card_3">
+            <img src="../Content/Nexus_Rohan.jpeg" alt="" />
+            <span>Rohan Sutradhar</span>
+            <a
+              href="https://www.linkedin.com/in/rohan-sutradhar-13714b21b/"
+              target="_blank"
+              >Linkedin URL</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>NEXUS360 &copy; &nbsp;2023</footer>
+    <script src="./Scroll.JS"></script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="hero">
+            <nav>
+                <img src="./images/logo.jpg" class="logo" alt=""><h2>Nexus<span>360</span></h2>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Badges</a></li>
+                </ul>
+                <!-- Adding JS for menu -->
+                <img src="./images/user.jpg" alt="" class="user-pic" onclick="toggleMenu()"> 
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="./images/user.jpg" alt="">
+                            <h3>User Name</h3>
+                        </div>
+                        <hr>
+    
+                        <a href="#" class="sub-menu-link">
+                            <img src="./images/icons8-male-user-24.png" alt="">
+                            <p>Edit Profile</p>
+                            <span>></span>
+                        </a>
+    
+                        <a href="#" class="sub-menu-link">
+                            <img src="./images/icons8-settings-24.png" alt="">
+                            <p>Settings & Privacy</p>
+                            <span>></span>
+                        </a>
+    
+                        <a href="#" class="sub-menu-link">
+                            <img src="./images/icons8-help-24.png" alt="">
+                            <p>Help & Support</p>
+                            <span>></span>
+                        </a>
+    
+                        <a href="#" class="sub-menu-link">
+                            <img src="./images/icons8-logout-24.png" alt="">
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+    
+                        
+                    </div>
+                </div>
+            
+            </nav>
+        </div>
+    
+    </section>
+    
+<!-- EVENTS SECTION -->
+    <div class="container">
+        <div class="content">
+            <h1>Genesis 2.0</h1>
+            <p>We are <span>Starting</span> soon</p>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <button type="button">Learn More <img src="./images/triangle.png" alt=""></button>
+        </div>
+        <img src="./images/rocket.png" class="rocket" alt="">
+    </div>
+    <script>
+        var countDownDate = new Date("March 17,2023 00:00:00").getTime();
+        var x = setInterval(function(){
+            var now  = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if(distance<0){
+                clearInterval(x);
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+            }
+        },1000)
+    </script>
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+    
+</body>
+</html>
